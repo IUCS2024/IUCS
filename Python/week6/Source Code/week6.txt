@@ -1,0 +1,189 @@
+1. örnek
+
+#while ile pozitif tam sayılar toplamı
+toplam = 0
+print("pozitif tam sayılar girin (çıkmak için 0 girin): ")
+
+while True:
+    sayi = int(input("bir sayı girin: "))
+    if sayi == 0:
+        break
+    if sayi < 0:
+        print("negatif sayılar geçersiz, pozitif sayı girin: ")
+        continue
+    toplam += sayi
+    print(f"güncel toplam: {toplam}")
+print(f"girdiğiniz sayıların toplamı: {toplam}")
+
+2. ödev while ile girilen sayıların faktöriyelini hesaplama, 0 ile çıksın, negatife uyarı versin
+
+3. tuple'lar yani demetler, listelere benzer, () ile gösterilir, indeks mantığı, yani veriyi aldığı sırayla saklar
+demeti tamamlayınca değiştiremezseniz. veri güvenliği için faydalı. değişkinlere aktarılabilir ama eleman sayısı aynı olmalı
+sayi = (3,6,7)
+a,b,c = sayi
+a,b veya a,b,c,d dersem hata verir
+index(x): istenen değerin indeksini verir
+count(x): istenen değerin tekrar sayısını verir
+
+4. örnek
+demetim = (1, 2, 3, 4, 2, 5, 2)
+eleman = 2
+ind_eleman = demetim.index(eleman)
+print(f"{eleman} elemanının indeksi: {ind_eleman}") 
+
+tekrar_eleman = demetim.count(eleman)
+print(f"{eleman} elemanının tekrar sayısı: {tekrar_eleman}") 
+
+5. örnek
+alisveris = ["elma","muz","süt","ekmek","yumurta","muz", "peynir"]
+
+urun = "muz"
+urun_index = alisveris.index(urun)
+print(f"{urun} ürününün indeksi: {urun_index}") 
+
+urun_tekrar = alisveris.count(urun)
+print(f"{urun} ürünün adeti: {urun_tekrar}")
+
+#append() ile liste sonuna eleman
+alisveris.append("armut")
+#çıktısı: ["elma","muz","süt","ekmek","yumurta","muz", "peynir", "armut"]
+
+#extend() ile listeyi genişletme
+alisveris.extend(["zeytin","un"])
+#çıktısı: ["elma","muz","süt","ekmek","yumurta","muz", "peynir", "armut","zeytin","un"]
+
+#insert(i, x) ile belirli bir indekse eleman ekleme
+alisveris.insert(3, "reçel")
+#çıktısı: ["elma","muz","süt","reçel","ekmek","yumurta","muz", "peynir", "armut","zeytin","un"]
+
+#remove() ile belirtilen elemanı silme
+alisveris.remove("muz")
+#çıktısı: ["elma","süt","reçel","ekmek","yumurta", "peynir", "armut","zeytin","un"]
+
+#pop([i]) ile belirtilen indeksteki elemanı silme
+alisveris_eksilt = alisveris.pop(3)
+#"ekmek", alisveris -> ["elma","süt","reçel","yumurta", "peynir", "armut","zeytin","un"]
+
+#clear() ile listedeki elemanları temizler
+alisveris.clear()
+#[]
+
+#index() ve count() yukarıda
+#indeksleme için:
+ilk_urun = alisveris.index[0]
+son_run = alisveris.index[-1]
+ucuncu_urun = alisveris.index[2]
+
+#sort() ile sıralar
+alisveris.sort()
+#alfabeye göre sıralanmış liste verir
+
+#reverse() ile elemanların sırasını sondan başa haline çevirir
+alisveris.reverse()
+
+#copy() listenin bir kopyasını döndürür
+yeni_liste = alisveris.copy()
+
+#dilimleme için
+alisveris = ["elma","süt","reçel","ekmek","yumurta", "peynir", "armut","zeytin","un"]
+
+ilk_uc = alisveris[:3]
+
+son_iki = alisveris[-2:]
+
+aralikta = alisveris[2:5]
+
+#
+alisveris = ["elma","yumurta","armut"]
+
+# + ile liste birleştirme
+diger_alisveris = ["bal","kaymak"]
+
+tam_liste = alisveris + diger alisveris
+#çıktı: ["elma","yumurta","armut","bal","kaymak"]
+
+#extend() ile liste genişletme
+alisveris.extend(["domates","biber","patlıcan"])
+#çıktı: ["elma","yumurta","armut","domates","biber","patlıcan"])
+
+
+#append() sona eleman ekler
+#insert() ile belli indekse eleman ekler
+
+append() ile liste eklersem
+alisveris = ["elma","armut","yumurta"]
+alisveris.append(["bal","reçel"])
+çıktısı: ["elma","armut","yumurta",["bal","reçel"]]
+
+reverse() ile tersine çeviririz
+
+alisveris.reverse()
+["yumurta","armut","elma"] 
+
+olur, orijinal liste değişir
+
+tersini kopya olarak oluşturmak için: 
+ters_alisveris= alisveris[::-1]
+
+kopyasını oluşturmak için
+kopya_alisveris = alisveris[:]
+
+
+"""
+kütüphane sözlüğü
+kitap_id kitap1 kitap2 gibi
+kitap adı
+yazar
+yayımlanma yılı
+türü
+"""
+kitaplar = {
+    "kitap1":{
+        "adı":"1984",
+        "yazarı":"George Orwell",
+        "yılı":"1949",
+        "türü":"Distopik"
+    },
+    "kitap2":{
+        "adı":"Bülbülü Öldürmek",
+        "yazarı":"Harper Lee",
+        "yılı":"1960",
+        "türü":"Kurgu"   
+    },
+    "kitap3":{
+        "adı":"The Great Gatsby",
+        "yazarı":"F. Scott Fitzgerald",
+        "yılı":"1925",
+        "türü":"Dram"
+    },
+    "kitap4":{
+        "adı":"Moby Dick",
+        "yazarı":"Herman Melville",
+        "yılı":"1851",
+        "türü":"Macera"   
+    }
+}
+
+for key, value in kitaplar.items():
+    print(f"{key}: ")
+    print("İsmi: ", value["adı"])
+    print("Yazarı: ", value["yazarı"])
+    print("Yayım yılı: ", value["yılı"])
+    print("Türü: ", value["türü"])
+print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
